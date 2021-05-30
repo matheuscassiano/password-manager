@@ -1,21 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import AppLoading from "expo-app-loading";
 
-export default function App() {
+import HomeScreen from "./src/Screens/Home";
+
+import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
+
+const Stack = createStackNavigator();
+
+function App() {
+  const [fontLoaded, error] = useFonts({
+    medium: Poppins_500Medium,
+  });
+
+  if (!fontLoaded) {
+    return <AppLoading />;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar style="light" />
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleStyle: {
+            fontSize: 25,
+            color: "white",
+            textAlign: "center",
+            fontFamily: "medium",
+          },
+          headerStyle: {
+            elevation: 0,
+            backgroundColor: "#1B262C",
+          },
+        }}
+      >
+        <Stack.Screen name="Senhas" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
