@@ -5,7 +5,7 @@ export default function AddButton() {
   return (
     <ButtonContainer>
       <Button colors={["#3282B8", "#0F4C75"]}>
-        <ButtonIcon name="plus" color="white" size={30} />
+        <ButtonIcon name="plus" size={30} />
       </Button>
     </ButtonContainer>
   );
