@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const ScreenContainer = styled.View`
     flex: 1;
-    padding: 0 30px;
+    padding: 0 20px;
     background-color: #1B262C;
     position: relative;
 `;
