@@ -18,5 +18,6 @@ export const Button = styled(LinearGradient)`
 `;
 
 export const ButtonIcon = styled(Icon)`
+   color: white;
    transform: rotate(45deg);
 `
