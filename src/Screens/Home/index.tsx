@@ -20,7 +20,7 @@ import AddButton from "../../Components/AddButton";
 import { FlatList } from "react-native-gesture-handler";
 import ListItem from "../../Components/ListItem";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [passwordList, setPasswords] = useState([]);
   useEffect(() => {
     setPasswords(passwords as any);
@@ -55,7 +55,7 @@ export default function HomeScreen() {
           </WarningText>
         </Center>
       )}
-      <AddButton />
+      <AddButton onPress={() => navigation.navigate('Adicionar senha')} />
     </ScreenContainer>
   );
 }
