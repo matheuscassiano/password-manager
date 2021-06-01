@@ -7,6 +7,8 @@ import AppLoading from "expo-app-loading";
 import HomeScreen from "./src/Screens/Home";
 
 import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
+import CreatePasswordScreen from "./src/Screens/CreatePassword";
+import BackButton from "./src/Components/BackButton";
 
 const Stack = createStackNavigator();
 
@@ -24,7 +26,7 @@ function App() {
       <Stack.Navigator
         screenOptions={{
           headerTitleStyle: {
-            fontSize: 25,
+            fontSize: 23,
             color: "white",
             textAlign: "center",
             fontFamily: "medium",
@@ -36,6 +38,20 @@ function App() {
         }}
       >
         <Stack.Screen name="Senhas" component={HomeScreen} />
+        <Stack.Screen
+          name="Adicionar senha"
+          component={CreatePasswordScreen}
+          options={{
+            headerLeft: BackButton,
+            headerTitleStyle: {
+              fontSize: 23,
+              color: "white",
+              textAlign: "center",
+              fontFamily: "medium",
+              marginLeft: -35,
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
