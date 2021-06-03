@@ -7,7 +7,6 @@ import { Row, SectionTitle } from "./styles";
 import LargeButton from "../../components/LargeButton";
 import MidButton from "../../components/MidButton";
 import MidStrokedButton from "../../components/MidStrokedButton";
-import getRealm from "../../services/realm";
 
 import {
   useFonts,
@@ -39,10 +38,7 @@ const CreatePasswordScreen: React.FC = () => {
         password,
       };
 
-      const realm = await getRealm();
-      realm.write(() => {
-        realm.create("Passeord", data);
-      });
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
