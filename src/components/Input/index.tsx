@@ -9,7 +9,7 @@ import {
 } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
 
-const Input: React.FC = ({ label, placeholder, type, secureTextEntry }) => {
+const Input: React.FC = ({ value, onChangeText, label, placeholder, type, secureTextEntry }) => {
   const [textInput, setTextInput] = useState();
   const [fontLoaded, error] = useFonts({
     regular: Poppins_400Regular,
@@ -24,6 +24,8 @@ const Input: React.FC = ({ label, placeholder, type, secureTextEntry }) => {
       <Label>{label}</Label>
       <Container>
         <StringInput
+          value={value}
+          onChangeText={onChangeText}
           placeholder={placeholder}
           placeholderTextColor="white"
           keyboardType={type}

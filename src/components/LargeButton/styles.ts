@@ -1,7 +1,17 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from "expo-linear-gradient";
 
-export const Button = styled(LinearGradient)`
+export const Button = styled(LinearGradient).attrs({
+   colors: ["#3282B8", "#0F4C75"],
+   start: {
+      x: 0,
+      y: 0,
+   },
+   end: {
+      x: 1,
+      y: 1,
+   }
+})`
    width: 100%;
    align-items: center;
    justify-content: center;

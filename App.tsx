@@ -4,11 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AppLoading from "expo-app-loading";
 
-import HomeScreen from "./src/Screens/Home";
+import HomeScreen from "./src/screens/Home";
 
 import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
-import CreatePasswordScreen from "./src/Screens/CreatePassword";
-import BackButton from "./src/Components/BackButton";
+import CreatePasswordScreen from "./src/screens/CreatePassword";
+import BackButton from "./src/components/BackButton";
 
 const Stack = createStackNavigator();
 

@@ -9,7 +9,7 @@ import {
 import AppLoading from "expo-app-loading";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function LargeButton({
+export default function MidButton({
   title,
   onPress,
 }: {
@@ -25,19 +25,8 @@ export default function LargeButton({
     return <AppLoading />;
   }
   return (
-    <TouchableOpacity>
-      <Button
-        onPress={onPress}
-        colors={["#3282B8", "#0F4C75"]}
-        start={{
-          x: 0,
-          y: 0,
-        }}
-        end={{
-          x: 1,
-          y: 1,
-        }}
-      >
+    <TouchableOpacity onPress={onPress}>
+      <Button>
         <ButtonText>{title}</ButtonText>
       </Button>
     </TouchableOpacity>

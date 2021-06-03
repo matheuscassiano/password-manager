@@ -25,8 +25,8 @@ export default function MidStrokedButton({
     return <AppLoading />;
   }
   return (
-    <TouchableOpacity>
-      <Button onPress={onPress}>
+    <TouchableOpacity onPress={onPress}>
+      <Button>
         <ButtonText>{title}</ButtonText>
       </Button>
     </TouchableOpacity>

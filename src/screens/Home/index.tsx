@@ -6,7 +6,7 @@ import {
   ScreenContainer,
   WarningTitle,
   WarningText,
-} from "../../Components/Styles";
+} from "../../components/Styles";
 
 import {
   useFonts,
@@ -14,11 +14,11 @@ import {
   Poppins_500Medium,
 } from "@expo-google-fonts/poppins";
 
-import passwords from "../../Services/password.service";
+import passwords from "../../services/password.service";
 
-import AddButton from "../../Components/AddButton";
+import AddButton from "../../components/AddButton";
 import { FlatList } from "react-native-gesture-handler";
-import ListItem from "../../Components/ListItem";
+import ListItem from "../../components/ListItem";
 
 export default function HomeScreen({ navigation }) {
   const [passwordList, setPasswords] = useState([]);
@@ -40,6 +40,7 @@ export default function HomeScreen({ navigation }) {
         <FlatList
           data={passwordList}
           renderItem={({ item }) => <ListItem {...item} />}
+          keyExtractor={(item, index) => String(item.id) || String(index)}
         />
       ) : (
         <Center>
